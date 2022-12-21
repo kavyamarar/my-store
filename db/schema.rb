@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_21_053628) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_21_085908) do
   create_table "items", force: :cascade do |t|
     t.string "name", null: false
     t.float "rate"
     t.float "quantity", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.date "date", null: false
+    t.float "quantity", null: false
+    t.float "total", null: false
+    t.integer "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_orders_on_item_id"
   end
 
 end

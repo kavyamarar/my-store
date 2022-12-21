@@ -1,8 +1,18 @@
 <div class="container">
-  <div class="item-header">
-    <h1>Items</h1>
-    <%= link_to "Add Item", new_item_path, class: "button"%>
-  </div>
-  <%= render "items", items: @items%>
-</div>
+  <% if flash[:notice].present? %>
+    <div class="flash">
+      <%= flash[:notice]%>
+    </div>
+  <%end%>
+    <div class="item-header">
+      <h1 id= "heading">Items</h1>
+      <div>
+        <%= link_to "Add Item", new_item_path, class: "button"%>
+      </div>
+    </div>
+    <%= render "items", items: @items %>
+ </div>
+
+
+
 

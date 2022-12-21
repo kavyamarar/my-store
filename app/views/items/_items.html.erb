@@ -1,5 +1,14 @@
   <% items.each do |item|%>
     <div class="item-box">
-      <%= item.name%>
+      <div><%= item.name%></div>
+      <div class="item-description-box">
+        <div><%= "Rate: #{item.rate}" %></div>
+        <div><%= "Quantity: #{item.quantity}" %></div>
+      </div>
+
+      <div class="item-action-box">
+        <%= link_to "Edit", edit_item_path(item), class:"button" %>
+        <%= button_to "Delete", item_path(item), method: :delete, class:"button" %>
+      </div>
     </div>
   <%end%>

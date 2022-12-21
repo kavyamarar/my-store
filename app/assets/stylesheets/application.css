@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ 
+ body{
+  background-color:rgb(200, 204, 204)
+ }
+
+ .flash{
+  animation: appear-then-fade 4s both;
+  padding: 10px;
+  border: 1px solid teal;
+  width: 50%;
+ }

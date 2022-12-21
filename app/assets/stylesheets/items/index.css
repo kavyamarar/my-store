@@ -1,7 +1,11 @@
 .item-box{
-  border: 1px solid black;
+  border: 1px solid teal;
   margin: 10px 0px;
   padding: 10px;
+  border-radius: 8px;
+  background-color: rgba(210, 238, 238, 0.823);
+  display: flex;
+  justify-content: space-between;
 }
 
 .container{
@@ -10,17 +14,32 @@
 }
 
 .button {
-  background-color: #4CAF50; /* Green */
+  background-color: teal; /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 7px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-}
+  border-radius: 8px;
+ }
 
+.button:hover{
+  background-color: rgb(19, 79, 79);
+}
 .item-header{
   display: flex;
   justify-content: space-between;
+  height: 50px;
+}
+
+.item-action-box{
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+#heading{
+  margin: 10px 0px;
 }

@@ -1,0 +1,22 @@
+<%= form_with model: item do |form| %>
+
+  <% if item.errors.any?%>
+    <ul class="alert alert-danger">
+    <% for message_error in item.errors.full_messages %>
+    <li>
+        <%= message_error %>
+    </li>
+    <% end %>
+</ul>
+  <% end %>
+  
+  <div class="form-items">
+    <%= form.label :name %><br>
+    <%= form.text_field :name, class:"input-field", placeholder: "Enter item name" %>
+    <%= form.label :rate %><br>
+    <%= form.number_field :rate, class:"input-field"%><br>
+    <%= form.label :quantity %><br>
+    <%= form.number_field :quantity, class:"input-field" %><br>
+    <%= form.submit class:"button"%>
+  </div>
+<% end %>
