@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="item-header">
+    <h1>Items</h1>
+    <%= link_to "Add Item", new_item_path, class: "button"%>
+  </div>
+  <%= render "items", items: @items%>
+</div>
+

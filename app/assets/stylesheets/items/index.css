@@ -1,0 +1,26 @@
+.item-box{
+  border: 1px solid black;
+  margin: 10px 0px;
+  padding: 10px;
+}
+
+.container{
+  margin: 0 auto;
+  width: 75%;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.item-header{
+  display: flex;
+  justify-content: space-between;
+}
