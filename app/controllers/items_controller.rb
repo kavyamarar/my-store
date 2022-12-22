@@ -10,6 +10,10 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def show
+   @orders = @item.orders
+  end
+
   def create
     @item = Item.new(item_params)
 
@@ -36,10 +40,10 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
+    flash[:notice] = "Item succesfully deleted"
     redirect_to action: :index
   end
-
-  
+ 
   private
     def item_params
       params.require(:item).permit(:name, :rate, :quantity)

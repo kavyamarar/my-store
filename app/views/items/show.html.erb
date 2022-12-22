@@ -1,0 +1,26 @@
+<div> <h1><%= "#{@item.name}"%></h1>
+ 
+<table id="orders">
+  <tr>
+    <th>S.no</th>
+    <th>Date</th>
+    <th>Quantity</th>
+    <th>Total</th>
+  </tr>
+  <% @orders.each_with_index do |order, index|%>
+    <tr>
+        <td><%= index + 1%></td>
+        <td><%= order.date%></td>
+        <td><%= order.quantity%></td>
+        <td><%=order.total_price%></td>
+      </tr>
+
+  <%end%>
+ 
+</table>
+  
+    
+
+</div>
+
+<%= link_to "<- Back to main page", items_path, class: "back-arrow" %>
