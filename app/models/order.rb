@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   validates :date, presence: true
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 0 }
-  validate :ensure_item_quantity_greater_than_zero
+  validate :ensure_item_count_greater_than_zero
 
   belongs_to :item #one to one 
 
@@ -26,9 +26,10 @@ class Order < ApplicationRecord
     item.update(quantity: updated_quantity)
   end
 
-  def ensure_item_quantity_greater_than_zero
-     return true if self.quantity <= item.quantity
-     throw(:abort)
+  def ensure_item_count_greater_than_zero
+    if item.quantity < quantity
+      errors.add(:quantity, "cant be greater than item count")
+    end
   end
    
 end
