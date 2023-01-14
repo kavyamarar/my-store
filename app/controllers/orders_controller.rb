@@ -1,17 +1,15 @@
 class OrdersController < ApplicationController
+  before_action :find_item, only: [:index, :new, :create]
 
   def index
-    @item = Item.find(params[:item_id])
     @orders = @item.orders
   end
 
   def new
-    @item = Item.find(params[:item_id])
     @order = @item.orders.build 
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @order = @item.orders.build(order_params)
 
     if @order.save
@@ -26,6 +24,10 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:date, :quantity)
+  end
+
+  def find_item
+    @item = Item.find(params[:item_id])
   end
   
 end

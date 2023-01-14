@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
   def show
    @orders = @item.orders
   end
++
 
   def create
     @item = Item.new(item_params)
