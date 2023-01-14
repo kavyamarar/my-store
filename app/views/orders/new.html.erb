@@ -1,0 +1,21 @@
+<%= form_with model: [@item, @order] do |form| %>
+
+  <% if @order.errors.any?%>
+    <ul class="alert alert-danger">
+    <% for message_error in @order.errors.full_messages %>
+    <li>
+        <%= message_error %>
+    </li>
+    <% end %>
+</ul>
+  <% end %>
+  
+  <div class="form-items">
+    <%= form.label :date %><br>
+    <%= form.date_field :date, class:"input-field"%><br>
+    <%= form.label :quantity %><br>
+    <%= form.number_field :quantity, class:"input-field" %>
+    <%= form.submit class:"button"%>
+  </div>
+<% end %>
+

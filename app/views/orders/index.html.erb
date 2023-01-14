@@ -1,4 +1,8 @@
 <div> <h1><%= "#{@item.name}"%></h1>
+
+<div>
+    <%= link_to "Create Order", new_item_order_path(@item), class: "button"%>
+</div>
  
 <table id="orders">
   <tr>
